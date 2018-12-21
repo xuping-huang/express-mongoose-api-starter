@@ -34,7 +34,7 @@ const envVarsSchema = Joi.object({
   MONGODB_URI: Joi.string().required()
     .description('MongoDB uri required to sign'),
   HOST: Joi.string().required()
-    .default('127.0.0.1'),
+    .default('localhost'),
   LOG_DIRNAME: Joi.string()
     .default('log'),
   LOG_INTERVAL: Joi.string()

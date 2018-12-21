@@ -11,7 +11,9 @@ const expressValidator = require('express-validator');
 const passport = require('passport');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
+const httpStatus = require('http-status');
 
+const { APIError } = require('./common/app-error');
 const errorHandler = require('./common/error-handler');
 const config = require('./config/env-config');
 const router = require('./app-routes');
@@ -91,6 +93,12 @@ app.use(morganLogger('common', {
 
 // Mount all routes on a root path
 app.use('', router);
+
+// catch 404 and forward to error handler
+app.use((req, res, next) => {
+  const err = new APIError('API not found', httpStatus.NOT_FOUND);
+  return next(err);
+});
 
 // Error Handler.
 if (config.isDebug) {
