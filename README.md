@@ -59,6 +59,7 @@ This is a boilerplate application for building REST APIs in Node.js + Express + 
 |chalk|Terminal string styling done right.|
 |cheerio|Fast, flexible & lean implementation of core jQuery designed specifically for the server.|
 |compression|Node.js compression middleware. The following compression codings are supported:deflate,gzip|
+|cookie-parser|Parse Cookie header and populate req.cookies with an object keyed by the cookie names.|
 |cors|CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.|
 |debug|A tiny JavaScript debugging utility modelled after Node.js core's debugging technique. Works in Node.js and web browsers.|
 |dotenv|Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env. |

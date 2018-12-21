@@ -24,6 +24,7 @@
     "chalk": "^2.4.1",
     "cheerio": "^1.0.0-rc.2",
     "compression": "^1.7.3",
+    "cookie-parser": "^1.4.3",
     "cors": "^2.8.5",
     "debug": "^4.1.0",
     "dotenv": "^6.0.0",

@@ -10,6 +10,7 @@ const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
 const passport = require('passport');
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 
 const errorHandler = require('./common/error-handler');
 const config = require('./config/env-config');
@@ -45,6 +46,9 @@ app.use(bodyParser.urlencoded({
   }
  */
 app.use(expressValidator());
+
+// add cookies obj in req, comment it if no cookies use.
+app.use(cookieParser());
 
 // enable CORS - Cross Origin Resource Sharing
 app.use(cors());
