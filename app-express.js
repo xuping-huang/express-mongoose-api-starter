@@ -65,8 +65,7 @@ app.disable('x-powered-by');
 /**
  * Log Handler
  *
- * log only 4xx and 5xx responses to console
- * log all requests to access.log
+ * log all requests to access.log first, after interval, the log will be moved to a new log file.
  *
  * Using roating file stream to save log.
  * If you want save log in one file, change code like below:
@@ -79,15 +78,10 @@ app.disable('x-powered-by');
 const logDirectory = path.join(__dirname, config.log.dirname);
 if (!fs.existsSync(logDirectory)) fs.mkdirSync(logDirectory);
 
-app.use(morganLogger('dev', {
-  skip: (req, res) => res.statusCode < 400
-}));
-
-// create a rotating write stream
 const accessLogStream = rotatingStream(config.log.filename, {
   interval: config.log.interval, // rotate interval
   size: config.log.size,
-  compress: config.log.compressFormat,
+  // compress: config.log.compressFormat,
   path: logDirectory
 });
 
