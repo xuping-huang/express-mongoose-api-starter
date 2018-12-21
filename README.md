@@ -68,6 +68,7 @@ This is a boilerplate application for building REST APIs in Node.js + Express + 
 |express-flash|Flash Messages for your Express Application.|
 |express-status-monitor|Simple, self-hosted module based on Socket.io and Chart.js to report realtime server metrics for Express-based node servers.|
 |express-validator|An express.js middleware for validator.|
+|helmet|Helmet helps you secure your Express apps by setting various HTTP headers. |
 |http-status|Utility to interact with HTTP status code.|
 |joi|Object schema description language and validator for JavaScript objects.|
 |jsonwebtoken|An implementation of JSON Web Tokens.|

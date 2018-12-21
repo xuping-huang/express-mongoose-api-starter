@@ -12,6 +12,7 @@ const passport = require('passport');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const httpStatus = require('http-status');
+const helmet = require('helmet');
 
 const { APIError } = require('./common/app-error');
 const errorHandler = require('./common/error-handler');
@@ -36,6 +37,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
+// secure apps by setting various HTTP headers
+app.use(helmet());
 
 /**
  * When validate fail, error response will like below:
