@@ -44,7 +44,7 @@ This is a boilerplate application for building REST APIs in Node.js + Express + 
 |eslint-plugin-chai-friendly|This plugin overrides no-unused-expressions to make it friendly towards chai expect and should statements.|
 |eslint-plugin-import|This plugin intends to support linting of ES2015+ (ES6+) import/export syntax, and prevent issues with misspelling of file paths and import names. All the goodness that the ES2015+ static module syntax intends to provide, marked up in your editor.|
 |mocha|Simple, flexible, fun JavaScript test framework for Node.js & The Browser. |
-|**nodemon**|nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.|
+|nodemon|nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.|
 |nyc|Istanbul's state of the art command line interface, with support for: 1)applications that spawn subprocesses. 2)ES2015 transforms, via babel-plugin-istanbul, or source-maps.|
 |sinon|JavaScript test spies, stubs and mocks|
 |sinon-mongoose|Extend Sinon stubs for Mongoose methods to test chained methods easily.|
@@ -59,14 +59,15 @@ This is a boilerplate application for building REST APIs in Node.js + Express + 
 |chalk|Terminal string styling done right.|
 |cheerio|Fast, flexible & lean implementation of core jQuery designed specifically for the server.|
 |compression|Node.js compression middleware. The following compression codings are supported:deflate,gzip|
-|**debug**|A tiny JavaScript debugging utility modelled after Node.js core's debugging technique. Works in Node.js and web browsers.|
+|cors|CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.|
+|debug|A tiny JavaScript debugging utility modelled after Node.js core's debugging technique. Works in Node.js and web browsers.|
 |dotenv|Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env. |
 |errorhandler|This middleware is only intended to be used in a development environment, as the full error stack traces and internal details of any object passed to this module will be sent back to the client when an error occurs.|
 |express|Fast, unopinionated, minimalist web framework for node.|
 |express-flash|Flash Messages for your Express Application.|
 |express-status-monitor|Simple, self-hosted module based on Socket.io and Chart.js to report realtime server metrics for Express-based node servers.|
 |express-validator|An express.js middleware for validator.|
-|**http-status**|Utility to interact with HTTP status code.|
+|http-status|Utility to interact with HTTP status code.|
 |joi|Object schema description language and validator for JavaScript objects.|
 |jsonwebtoken|An implementation of JSON Web Tokens.|
 |lusca|Web application security middleware.|
@@ -78,5 +79,5 @@ This is a boilerplate application for building REST APIs in Node.js + Express + 
 |passport-jwt|Passport authentication strategy using JSON Web Tokens.|
 |popper.js|A library used to position poppers in web applications.A popper is an element on the screen which "pops out" from the natural flow of your application. Common examples of poppers are tooltips, popovers and drop-downs.|
 |request|Used by express status monitor.|
-|**rotating-file-stream**|Creates a stream.Writable to a file which is rotated. Rotation behaviour can be deeply customized; optionally, classical UNIX logrotate behaviour can be used.|
+|rotating-file-stream|Creates a stream.Writable to a file which is rotated. Rotation behaviour can be deeply customized; optionally, classical UNIX logrotate behaviour can be used.|
 |validator|A library of string validators and sanitizers.|

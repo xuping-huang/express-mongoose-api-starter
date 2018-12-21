@@ -9,6 +9,7 @@ const compression = require('compression');
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
 const passport = require('passport');
+const cors = require('cors');
 
 const errorHandler = require('./common/error-handler');
 const config = require('./config/env-config');
@@ -18,24 +19,16 @@ const app = express();
 app.set('host', config.host);
 app.set('port', config.port);
 app.set('privateKey', config.privateKey);
-/**
- * Monitor express running at http://host:port/status
- */
+// Monitor express running at http://host:port/status
 app.use(expressStatusMonitor());
 
-/**
- * Comment it if choose ngnix to compress response.
- */
+// Comment it if choose ngnix to compress response.
 app.use(compression());
 
-/**
- * Passport
- */
+// Passport
 app.use(passport.initialize());
 
-/**
- * Create req.body in request object.
- */
+// Create req.body in request object.
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
@@ -53,9 +46,10 @@ app.use(bodyParser.urlencoded({
  */
 app.use(expressValidator());
 
-/**
- * Hide the technical details of the site implementation.
- */
+// enable CORS - Cross Origin Resource Sharing
+app.use(cors());
+
+// Hide the technical details of the site implementation.
 app.disable('x-powered-by');
 
 /**
@@ -91,14 +85,10 @@ app.use(morganLogger('common', {
   stream: accessLogStream
 }));
 
-/**
- * Mount all routes on a root path
- */
+// Mount all routes on a root path
 app.use('', router);
 
-/**
- * Error Handler.
- */
+// Error Handler.
 if (config.isDebug) {
   app.use(devErrorHandler());
 } else {
