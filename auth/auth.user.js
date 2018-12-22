@@ -6,6 +6,8 @@ const passportConfig = require('../common/passport'); // must require, strategy 
 const { BadRequestError, AuthenticateError } = require('../common/app-error');
 const config = require('../config/env-config');
 
+passportConfig.init();
+
 /**
  * Returns jwt token if valid username and password is provided
  *

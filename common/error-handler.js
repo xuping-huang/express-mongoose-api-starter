@@ -1,7 +1,6 @@
 const { promisify } = require('util');
 const debug = require('debug')('apiKit');
 
-const isTrustedError = error => error.isOperational;
 const isCriticalError = error => error.isCritical;
 
 const sendMailIfCritical = (error) => {
@@ -18,7 +17,6 @@ const saveQueueIfCritical = (error) => {
   }
 };
 
-const determineIfOperationalError = promisify(isTrustedError);
 const sendMailToAdminIfCritical = promisify(sendMailIfCritical);
 const saveInOpsQueueIfCritical = promisify(saveQueueIfCritical);
 
@@ -28,5 +26,4 @@ exports.handleError = async (error) => {
   }
   await sendMailToAdminIfCritical;
   await saveInOpsQueueIfCritical;
-  await determineIfOperationalError;
 };

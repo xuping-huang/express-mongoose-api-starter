@@ -103,12 +103,7 @@ if (config.isDebug) {
   app.use(devErrorHandler());
 } else {
   app.use(async (err, req, res, next) => {
-    const isOperationalError = await errorHandler.handleError(err);
-    if (!isOperationalError) {
-      next(err);
-    }
-  });
-  app.use((err, req, res, next) => {
+    await errorHandler.handleError(err);
     res.status(500).send('Internal Server Error');
   });
 }
