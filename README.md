@@ -2,6 +2,11 @@
 
 This is a boilerplate application for building REST APIs in Node.js + Express + Mongoose. Helps you stay productive by following best practices. Follows Airbnb's Javascript style guide.
 
+## Install & Run
+
+$ npm install  
+$ npm run start
+
 # Features
 
 | Feature | Summary |
@@ -16,13 +21,14 @@ This is a boilerplate application for building REST APIs in Node.js + Express + 
 |Convert the variables in process.env to config object|Through `'dotenv'` load the env variables from `'.env'` and use `'joi'` validation and convert to config object. All action in `'./config/env-config.js'`. |
 |API security with JWT|Using JSON Web Token to authenticate users that request access.|
 |Detailed comments|Detailed comments for each code line. Help you understand the kit quicker.|
+|Docker Deployment|Deploy the entire operating environment with one command `docker-compose up` and support data initialization for the mongo database.|
 
 # Scripts
 
 | Script | Summary |
 |---|---|
 |npm run debug|Set env=development and DEBUG=apiKit, the debug() will print info to console.|
-|npm run start|Use nodemon to monitor code change, restart express auto.|
+|npm run start|Start express.|
 |npm run lint|Use eslint to check code style with 'Airbnb JavaScript Style Guide' rules.|
 |npm run test|Running api test with mocha.|
 
@@ -33,6 +39,12 @@ This is a boilerplate application for building REST APIs in Node.js + Express + 
 | Supported Auth | Summary |
 |---|---|---|
 | Local RSA | Authenticated with name & password, password was encrypted by RSA before transfer. |
+
+# Docker Demployment
+
+ - Configuration: `Dockfile`, `docker-compose.yml`
+ - DB Data Import: `db/user.json`, `db/import.sh`
+ - Running: `docker-compose up`  
 
 # Develop Dependenices
 

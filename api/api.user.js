@@ -9,7 +9,7 @@ const User = require('../model/User');
 // const config = require('../config/env-config');
 
 /**
- * Returns jwt token if valid username and password is provided
+ * Returns the total number of users
  */
 exports.userCount = (req, res, next) => {
   User.count({}, (err, count) => {

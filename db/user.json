@@ -1,0 +1,4 @@
+[
+{"_id":{"$oid":"5c1bb8f406c7541514032a65"},"username":"jason","email":"it@huangxuping.com","password":"$2a$10$/MpvAsCjZ0JlO6Lebr5Z/.nGHvo/2Lx0UifmlHHTgpNPGN5gtMIQq"},
+{"_id":{"$oid":"5c1bb91506c7541514032a66"},"username":"test","email":"support@test.com","password":"jqdsngdSa8NWojBevL77IV6XYzJbjMQfi40kvwBXyeVh+YaWx14eRt/5rc4YoxOJHFXLuiIWca5S/6+2blkSNA=="}
+]

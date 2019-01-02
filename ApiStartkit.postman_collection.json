@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "b5cbe87f-0f0a-4f52-b861-f61f1c61ac54",
+		"name": "ApiStartkit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get JWT Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "707052d6-42d7-4ed1-bfe6-17082d85f160",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.globals.set(\"jwtToken\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"it@huangxuping.com\",\n\t\"password\": \"sCMkEoaw5NnipYoL7hf5xm0hP1KgB8l8SQeDbUxyXEnFWpYYanZsO15ONqioXrkVH9fbjwwm+zJutj8setQ2HA==\"\n}"
+				},
+				"url": {
+					"raw": "localhost/auth/user",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"auth",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User count with JWT token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwtToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost/api/user/count",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"user",
+						"count"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

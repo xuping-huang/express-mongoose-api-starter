@@ -22,7 +22,7 @@ debug('process.env.DEBUG=%s', process.env.DEBUG);
 const envVarsSchema = Joi.object({
   NODE_ENV: Joi.string()
     .allow(['development', 'production', 'test', 'provision'])
-    .default('development'),
+    .default('production'),
   PORT: Joi.number()
     .default(8080),
   IS_DEBUG: Joi.boolean()

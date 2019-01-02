@@ -46,3 +46,5 @@ passport.use(new LocalStrategy({
     });
   });
 }));
+
+exports.init = () => { /* no use, just for lint */ };

@@ -81,14 +81,6 @@ userSchema.methods.gravatar = function gravatar(size) {
   return `https://gravatar.com/avatar/${md5}?s=${size}&d=retro`;
 };
 
-/**
- * Helper information
- */
-userSchema.query.methodName = function methodName() {
-};
-userSchema.index({ name: 1, type: -1 });
-
-
 const User = mongoose.model('User', userSchema);
 
 
